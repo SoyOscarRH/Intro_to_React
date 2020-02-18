@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      const Blink = ({ time, children }) => {
+        const [visible, changeVisible] = React.useState(false)
+        React.useEffect(() => {
+          const change = () => changeVisible(v => !v)
+          const remove = setInterval(change, time)
+        }, [])
+
+        const style = visible? {} : {visibility: "hidden"};
+        return (
+          <span style={style} >
+            {children}
+          </span>
+        );
+      };
+
+      const Main = () => (
+        <main>
+          <h2> cosas importantes </h2>
+          <p>
+            <Blink time={40}> lsnfasd </Blink> 
+            <Blink time={500}> afaaf </Blink> 
+            sdfsf
+          </p>
+        </main>
+      );
+
+      const DOM_NODE = document.getElementById("root");
+      ReactDOM.render(<Main />, DOM_NODE);
+    </script>
+  </body>
+</html>
