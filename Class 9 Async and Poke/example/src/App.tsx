@@ -1,23 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import Card from "./Card";
+import getData from "./getData"
 import "./App.css";
-
-const request = "https://www.breakingbadapi.com/api/quote/random";
+const base = "https://pokeapi.co/api/v2/pokemon?limit=151";
 
 const App: React.FC = () => {
-  const [frase, cambiar] = useState("asdaasd");
-  const changeIt = async () => {
-    cambiar("...");
-    const x = await fetch(request);
-    const json = await x.json();
-    cambiar(json[0].quote);
+  const [pokemons, changePokemons] = useState([] as Array<any>);
+  const getBase = async () => {
+    const data = await getData(base);
+    changePokemons(data.results);
   };
 
+  useEffect(() => {
+    getBase();
+  }, []);
+
   return (
-    <div className="App">
-      <button onClick={changeIt}>Obtener frase</button>
-      <br />
-      {frase}
-    </div>
+    <main className="App">
+      {pokemons.map(poke => (
+        <Card name={poke.name} url={poke.url} />
+      ))}
+    </main>
   );
 };
 

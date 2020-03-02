@@ -1,0 +1,35 @@
+
+
+.Card {
+  margin: 1rem;
+  border-radius: 0.4rem;
+  background-color: rgb(233, 233, 233);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.cardContainer {
+  background-color: rgba(255, 250, 250, 0.99);
+  border-radius: 0 0 0.4rem 0.4rem;
+  padding: 1rem;
+  color: rgb(61, 61, 61);
+}
+
+.Card:hover {
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+.profile {
+  width: 15rem;
+}
+
+.name{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.id{
+  font-size: 0.9rem;
+  font-weight: 300;
+  padding-top: 0.5rem;
+}
