@@ -1,61 +1,52 @@
 import React, { useReducer, useRef } from "react";
 import "./App.css";
 
-type action_t = "add" | "remove";
+type actionName = "add" | "remove";
+type action = { name: actionName; payload: any };
 type todos = Array<string>;
 
-const reducer = (current: todos, action: { name: action_t; payload: any }) => {
+const reducer = (current: todos, action: action): todos => {
   if (action.name === "add") {
     const newTodos = [...current];
     newTodos.push(action.payload);
 
     return newTodos;
-  }
-
-  if (action.name === "remove") {
+  } else if (action.name === "remove") {
     return current.filter(todo => todo !== action.payload);
   }
 
-  return [] as todos;
+  return [];
 };
 
 const App: React.FC = () => {
   const [data, update] = useReducer(reducer, []);
+  const newTodo = useRef<HTMLInputElement>(null);
 
-  const newTodo = useRef(null as any);
+  const addToDo = () => {
+    if (!newTodo.current) return;
+
+    const text = newTodo.current.value;
+    newTodo.current.value = "";
+    update({ name: "add", payload: text });
+  };
 
   return (
     <main className="App">
-      <div
-        style={{
-          margin: "1rem",
-          padding: "1rem",
-          backgroundColor: "tomato",
-          borderRadius: "1rem"
-        }}
-      >
+      <h3>Todos</h3>
+      <div className="Container">
         <input ref={newTodo} type="text" />
-        <button
-          onClick={() => {
-            const newData = newTodo.current.value;
-            newTodo.current.value = "";
-            update({ name: "add", payload: newData });
-          }}
-        >5
-          Add!
-        </button>
-        <br />
-        <br />
-        {data.map(todo => (
-          <div style={{ color: "white", fontSize: "1.3rem" }}>
-            {" "}
-            {todo}
-            <button onClick={() => update({ name: "remove", payload: todo })}>
-              remove
-            </button>
-          </div>
-        ))}
+        <button onClick={addToDo}>Add!</button>
       </div>
+
+      {data.map(todo => {
+        const onClick = () => update({ name: "remove", payload: todo });
+        return (
+          <div className="Todo">
+            <span>{todo}</span>
+            <button onClick={onClick}>remove</button>
+          </div>
+        );
+      })}
     </main>
   );
 };
