@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
+
+:root {
+  --dark-color: rgb(101, 100, 116);
+  --base: min(8vw, 3rem);
+}
+
+.App {
+  text-align: center;
+  font-size: var(--base);
+  margin: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--dark-color);
+  border-radius: 0.4rem;
+  flex: 1;
+  font-family: "Inter", sans-serif;
+}
+
+.Container {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .Container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
+.Todo {
+  color: white;
+  font-size: calc(0.6 * var(--base));
+  font-weight: 300;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr auto;
+  margin: 0.3rem 0;
+  padding: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.103);
+  border-radius: 0.3rem;
+}
+
+button {
+  background-color: rgba(175, 250, 175, 0.363);
+  color: white;
+  border-radius: 0.2rem;
+  border: 0;
+  font-weight: 600;
+  font-size: calc(0.45 * var(--base));
+  padding: 0.4rem 1rem;
+}
+
+input {
+  font-size: calc(0.7 * var(--base));
+  padding: 0.1rem;
+  color: var(--dark-color);
+  border: 0;
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  font-weight: 500;
+}
+
+h3 {
+  color: white;
+  font-weight: 600;
+}
