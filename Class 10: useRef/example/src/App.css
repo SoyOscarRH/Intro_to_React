@@ -1,19 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Inter&display=swap");
 
 :root {
-  --dark-color: rgb(101, 100, 116);
+  --dark-color: #545894;
+  --green-color: rgba(175, 250, 175, 0.35);
+  --little-transparent-color: rgba(255, 255, 255, 0.1);
   --base: min(8vw, 3rem);
 }
 
 .App {
   text-align: center;
   font-size: var(--base);
+  font-family: "Inter", sans-serif;
+
   margin: 1.5rem;
   padding: 1.5rem;
+
   background-color: var(--dark-color);
   border-radius: 0.4rem;
+
   flex: 1;
-  font-family: "Inter", sans-serif;
 }
 
 .Container {
@@ -24,42 +29,46 @@
   .Container {
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 5fr 1fr;
+    grid-template-columns: 10fr 4fr;
     grid-gap: 1rem;
   }
 }
 
 .Todo {
-  color: white;
   font-size: calc(0.6 * var(--base));
-  font-weight: 300;
+  font-weight: 400;
+  color: white;
+
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: 1fr auto;
+
   margin: 0.3rem 0;
   padding: 0.6rem;
-  background-color: rgba(255, 255, 255, 0.103);
   border-radius: 0.3rem;
+  background-color: var(--little-transparent-color);
 }
 
 button {
-  background-color: rgba(175, 250, 175, 0.363);
-  color: white;
-  border-radius: 0.2rem;
+  background-color:var(--green-color); 
+  border-radius: 0.3rem;
   border: 0;
+
   font-weight: 600;
   font-size: calc(0.45 * var(--base));
+  color: white;
+
   padding: 0.4rem 1rem;
 }
 
 input {
   font-size: calc(0.7 * var(--base));
-  padding: 0.1rem;
   color: var(--dark-color);
+  font-weight: 500;
+
   border: 0;
   border-radius: 0.2rem;
-  padding: 0.4rem;
-  font-weight: 500;
+  padding: 0.5rem;
 }
 
 h3 {
