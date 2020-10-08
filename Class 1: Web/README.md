@@ -1,6 +1,7 @@
 # Web and software engineering in general
  - [Computer Science book](CS.zip) (pw: react)
  - [La ruta de un desarollador web](https://youtu.be/ExsGyZDBlJQ)
+ - [HTML Handbook](https://flaviocopes.com/page/html-handbook/)
 
 # Class:
 - [Learn HTML](https://marksheet.io/)
