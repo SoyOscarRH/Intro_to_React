@@ -5,6 +5,7 @@
 - [JavaScript, the React parts](https://reacttraining.com/blog/javascript-the-react-parts/)
 - [Twitter: Kent  C Dodds](https://twitter.com/kentcdodds)
 - [What is JSX?](kentcdodds.com/blog/what-is-jsx)
+- [React tutorial by Kent](egghead.io/courses/the-beginner-s-guide-to-react)
 - [Tyler Mc Ginnis](https://tylermcginnis.com/)
 - [Tyler Mc Ginnis - React course](tylermcginnis.com/free-react-bootcamp/)
 - [Tyler Mc Ginnis - Intro to React](https://dev.to/tylermcginnis/a-comprehensive-guide-to-reactjs-in-2018--4nbc)

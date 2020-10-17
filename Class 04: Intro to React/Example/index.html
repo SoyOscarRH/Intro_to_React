@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example 1</title>
+    <title>Example</title>
     <meta charset="utf-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
+
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
 
   <body>
-    <section>
-      <h1>Interneting Is Easy!</h1>
-      <p>First, we need to learn some basic HTML.</p>
-    </section>
-    <script type="text/javascript" src="main.js"></script>
+    <section id="reactID"></section>
 
     <script type="text/babel">
-      ReactDOM.render(<h1>Hello, world!</h1>, document.getElementById("root"));
+      const App = () => {
+        const css = {
+          fontFamily: "sans-serif",
+          color: "white",
+          padding: "1rem",
+          margin: "1rem",
+          borderRadius: "0.4rem",
+          background: "linear-gradient(to bottom, blue, aqua)",
+        };
+
+        const x = 10;
+
+        return (
+          <div style={css}>
+            <h1>To Do</h1>
+            <p>Things to to</p>
+            <ul>
+              <li>Be happy</li>
+              <li>Rest</li>
+              <li>Read</li>
+              <li>See friend online</li>
+            </ul>
+          </div>
+        );
+      };
+
+      const SuperApp = () => (
+        <div><App/><App /><App /><App /></div>
+      )
+
+      const DOM_NODE = document.getElementById("reactID");
+      ReactDOM.render(<SuperApp />, DOM_NODE);
     </script>
   </body>
 </html>
