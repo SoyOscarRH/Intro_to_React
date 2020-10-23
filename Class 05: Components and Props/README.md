@@ -9,7 +9,6 @@
 - [Tyler Mc Ginnis - React course](tylermcginnis.com/free-react-bootcamp/)
 - [Tyler Mc Ginnis - Intro to React](https://dev.to/tylermcginnis/a-comprehensive-guide-to-reactjs-in-2018--4nbc)
 - [Tyler Mc Ginnis - A way to learn React](https://itnext.io/a-way-to-learn-react-b95056eafebb)
-- [Form](forms.gle/fYa86f7v7xXA8qj9A)
 
 
 # Videos:
