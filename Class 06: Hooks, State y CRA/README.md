@@ -21,5 +21,3 @@
 # Interesting Links - Advance:
 - [React as a UI Runtime](https://overreacted.io/react-as-a-ui-runtime/)
 - [Single div Sierpinski triangle](https://yuanchuan.dev/single-div-sierpinski-triangle)
-
-https://youtu.be/7O43VDOlQ_o?list=WL
