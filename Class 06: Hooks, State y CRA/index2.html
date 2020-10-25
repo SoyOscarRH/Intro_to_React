@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Class 6</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <section id="reactID"></section>
+
+    <script type="text/babel">
+      const css = {
+        fontFamily: "sans-serif",
+        color: "#9ba4b4",
+        padding: "1rem",
+        margin: "1rem",
+        borderRadius: "0.4rem",
+        background: "linear-gradient(to bottom, #14274e, #394867)",
+      };
+
+      const Blinker = ({ children }) => {
+        const [visible, setVisible] = React.useState(true);
+
+        React.useEffect(() => {
+          setInterval(() => setVisible((v) => !v), 800);
+        }, []);
+
+        return (
+          <div style={{ display: visible ? "block" : "none" }}>
+            {children}
+          </div>
+        );
+      };
+
+      const App = () => {
+        return (
+          <React.StrictMode>
+            <section>
+              <Blinker>
+                <h1> Holi </h1>
+              </Blinker>
+            </section>
+          </React.StrictMode>
+        );
+      };
+
+      const DOM_NODE = document.getElementById("reactID");
+      ReactDOM.render(<App />, DOM_NODE);
+    </script>
+  </body>
+</html>

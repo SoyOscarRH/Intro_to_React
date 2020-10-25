@@ -1,6 +1,5 @@
 # Class:
 - [Slides](https://docs.google.com/presentation/d/1QIf4KaVntmKnRyVJaeFHW6wv3_ak8DjXXbn37v-C_4k/edit?usp=sharing)
-- [Form](https://forms.gle/spNTqcTYBoxsQkMU8)
 
 # Interesting Links:
 - [JavaScript, the React parts](https://reacttraining.com/blog/javascript-the-react-parts/)
