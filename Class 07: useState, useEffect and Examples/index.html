@@ -11,24 +11,25 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      function ShowDim() {
-        const [currentWidth, changeWidth] = React.useState(window.innerWidth);
-
-        React.useEffect(() => {
-          const changeW = () => changeWidth(window.innerWidth);
-          window.addEventListener("resize", changeW);
-
-          return () => console.log("estoy siendo destruido")
-        }, []);
-
+      const Counter = ({ initValue }) => {
+        const [count, setCount] = React.useState(initValue);
         return (
           <div>
-            <h1 style={{ fontSize: "3rem" }}>The width {currentWidth}</h1>
+            <h2>The count is {count}</h2>
+            <button onClick={() => setCount(count => count + 1)}>plus one</button>
+            <button onClick={() => setCount(count => count - 1)}>minus one</button>
           </div>
         );
-      }
+      };
 
-      ReactDOM.render(<ShowDim />, document.getElementById("root"));
+      const App = () => (
+        <section>
+          <Counter initValue={0} />
+          <Counter initValue={100} />
+        </section>
+      );
+
+      ReactDOM.render(<App />, document.getElementById("root"));
     </script>
   </body>
 </html>
