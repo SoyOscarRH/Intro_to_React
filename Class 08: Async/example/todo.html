@@ -2,7 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ToDos</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 
@@ -14,17 +15,21 @@
     <style>
       main {
         background-color: #f1f6f9;
-        padding: 1rem;
+        padding: 2rem;
         border-radius: 0.1rem;
+        font-size: 1.4rem;
       }
 
-      header {
+      form {
         padding: 1rem 0;
         display: flex;
         justify-content: space-between;
       }
 
       .todo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         background-color: #9ba4b4;
         color: #14274e;
         padding: 0.5em;
@@ -38,20 +43,27 @@
         color: #f1f6f9;
         border-radius: 1rem;
         border: 0;
-        padding: 0.2rem 1rem;
+        padding: 0.4rem 1rem;
+        font-size: 1.3rem;
+      }
+
+      .input {
+        font-size: 1.2rem;
+        max-width: 60%;
+      }
+
+      input[type="checkbox"] {
+        transform: scale(1.5);
       }
     </style>
 
     <script type="text/babel">
       const ToDo = ({ text, deleteTodo }) => {
-        const deteleIt = () => setTimeout(() => deleteTodo(text), 400)
+        const deteleIt = () => deleteTodo(text);
         return (
           <div className="todo" onClick={deteleIt}>
-            <input
-              type="checkbox"
-              onChange={deteleIt}
-            />
             {text}
+            <input type="checkbox" onChange={deteleIt} />
           </div>
         );
       };
@@ -62,7 +74,8 @@
 
         const updateText = (e) => setText(e.target.value);
 
-        const addNewTodo = () =>
+        const addNewTodo = (e) => {
+          e.preventDefault();
           updateTodos((todos) => {
             if (text == "") return todos;
             const newTodos = [...todos];
@@ -71,23 +84,22 @@
             return newTodos;
           });
 
+          return false;
+        };
+
         return (
           <main>
-            <header>
+            <form onSubmit={addNewTodo}>
               <input className="input" value={text} onChange={updateText} />
               <button className="add" onClick={addNewTodo}>
                 Add!
               </button>
-            </header>
+            </form>
 
             <section className="todos">
-              {todos.map((todo) => {
-                const deleteTodo = (text) =>
-                  updateTodos((oldTodos) =>
-                    todos.filter((todo) => todo != text)
-                  );
-
-                return <ToDo key={todo} text={todo} deleteTodo={deleteTodo} />;
+              {todos.map((todo, index) => {
+                const deleteTodo = (text) => updateTodos((oldTodos) => oldTodos.filter((todo) => todo != text));
+                return <ToDo key={index} text={todo} deleteTodo={deleteTodo} />;
               })}
             </section>
           </main>
