@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <style>
+      main {
+        background-color: #f1f6f9;
+        padding: 1rem;
+        border-radius: 0.1rem;
+      }
+
+      header {
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .todo {
+        background-color: #9ba4b4;
+        color: #14274e;
+        padding: 0.5em;
+        margin: 0.5em 0;
+        border-radius: 0.1em;
+        font-family: sans-serif;
+      }
+
+      .add {
+        background-color: #14274e;
+        color: #f1f6f9;
+        border-radius: 1rem;
+        border: 0;
+        padding: 0.2rem 1rem;
+      }
+    </style>
+
+    <script type="text/babel">
+      const ToDo = ({ text, deleteTodo }) => {
+        const deteleIt = () => setTimeout(() => deleteTodo(text), 400)
+        return (
+          <div className="todo" onClick={deteleIt}>
+            <input
+              type="checkbox"
+              onChange={deteleIt}
+            />
+            {text}
+          </div>
+        );
+      };
+
+      const ToDos = () => {
+        const [text, setText] = React.useState("");
+        const [todos, updateTodos] = React.useState([]);
+
+        const updateText = (e) => setText(e.target.value);
+
+        const addNewTodo = () =>
+          updateTodos((todos) => {
+            if (text == "") return todos;
+            const newTodos = [...todos];
+            newTodos.push(text);
+            setText("");
+            return newTodos;
+          });
+
+        return (
+          <main>
+            <header>
+              <input className="input" value={text} onChange={updateText} />
+              <button className="add" onClick={addNewTodo}>
+                Add!
+              </button>
+            </header>
+
+            <section className="todos">
+              {todos.map((todo) => {
+                const deleteTodo = (text) =>
+                  updateTodos((oldTodos) =>
+                    todos.filter((todo) => todo != text)
+                  );
+
+                return <ToDo key={todo} text={todo} deleteTodo={deleteTodo} />;
+              })}
+            </section>
+          </main>
+        );
+      };
+
+      ReactDOM.render(<ToDos />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
