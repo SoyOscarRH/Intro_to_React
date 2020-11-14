@@ -1,5 +1,5 @@
 # Class:
-- [Slides](https://docs.google.com/presentation/d/19hEclU5rf1PmbnQxp5qTy_W449xLL8vNz02WgDuQvoA/edit?usp=sharing)
+- [Slides](https://docs.google.com/presentation/d/1MET3tLRdMksoWkBtBLM6XCRnRXgj64cNvU4XUroTX6Q/edit?usp=sharing)
 
 # Interesting Links:
 - [The Ultimate Guide to Hoisting, Scopes, and Closures in JavaScript](https://ui.dev/ultimate-guide-to-execution-contexts-hoisting-scopes-and-closures-in-javascript/)
