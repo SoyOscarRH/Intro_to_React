@@ -1,21 +1,57 @@
-.tracks {
+.track {
   color: rgb(224, 223, 223);
-  background: rgb(28, 5, 43);
-  background: linear-gradient(90deg, rgba(28, 5, 43, 1) 0%, rgb(116, 19, 19) 100%);
+  background: linear-gradient(90deg, #14274e 0%, #394867 100%);
   border-radius: 1rem;
   padding: 1rem 2rem;
-  margin: 2rem 0;
+  font-weight: 300;
+  color: #75849e;
 }
+
+.track h2 {
+  color: #9ba4b4;
+}
+
 
 .info {
   margin-bottom: 3rem;
 } 
 
+.area  {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.iconWrapper {
+  padding: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  padding-top: 4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.iconWrapper svg {
+  transform: scale(2);
+}
+
 .search {
-  font-size: 2rem;
-  background-color: rgba(100, 80, 26, 0.2);
+  font-size: 1.6rem;
+  background-color: transparent;
+  border: 0.4rem #14274e solid;
+  color: #14274e;
   border-radius: 0.3rem;
   padding: 1rem;
-  border: 0;
   font-weight: 600;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 4rem 0;
 }

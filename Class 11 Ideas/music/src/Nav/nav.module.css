@@ -1,6 +1,7 @@
 aside {
   background-color: rgb(26, 26, 26);
-  height: 100vh;
+  max-height: 100vh;
+  min-height: 100vh;
   max-width: 10vw;
   padding: 1rem 0.5rem;
 
@@ -8,6 +9,7 @@ aside {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  box-sizing: border-box;
 }
 
 .selected {
@@ -18,6 +20,10 @@ aside {
   display: flex;
 }
 
-svg {
+.unselected svg {
+  filter: invert(60%);
+}
+
+.selected svg {
   filter: invert(100%);
 }

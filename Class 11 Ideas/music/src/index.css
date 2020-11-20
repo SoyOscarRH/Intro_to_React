@@ -16,3 +16,9 @@ html {
     font-family: "Inter var", sans-serif;
   }
 }
+
+
+html, body, #root {
+  max-height: 100vh;
+  min-height: 100vh;
+}
