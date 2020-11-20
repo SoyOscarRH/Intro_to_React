@@ -1,0 +1,12 @@
+.main {
+  padding: 2.5rem;
+  background: rgb(210, 255, 221);
+  background: linear-gradient(0deg, rgba(210, 255, 221, 1) 0%, rgba(240, 236, 236, 1) 13%);
+  overflow: scroll;
+  max-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}

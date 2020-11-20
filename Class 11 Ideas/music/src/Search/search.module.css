@@ -1,0 +1,21 @@
+.tracks {
+  color: rgb(224, 223, 223);
+  background: rgb(28, 5, 43);
+  background: linear-gradient(90deg, rgba(28, 5, 43, 1) 0%, rgb(116, 19, 19) 100%);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+}
+
+.info {
+  margin-bottom: 3rem;
+} 
+
+.search {
+  font-size: 2rem;
+  background-color: rgba(100, 80, 26, 0.2);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  border: 0;
+  font-weight: 600;
+}
