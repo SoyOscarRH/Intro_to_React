@@ -1,0 +1,67 @@
+.player {
+  position: fixed;
+  bottom: 0;
+
+  min-width: 92vw;
+  margin-left: 8vw;
+  box-sizing: border-box;
+
+  backdrop-filter: blur(0.6rem);
+  background-color: rgba(255, 255, 255, 0.2);
+
+  user-select: none;
+  display: grid;
+  grid-template-rows: 1fr  auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 1.6rem 1rem;
+}
+.container * {
+  margin: auto auto;
+}
+
+.playing {
+  border-radius: 100%;
+  background-color: rgb(64, 212, 84);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.playing svg {
+  padding: 0.3rem;
+  height: 2rem;
+  width: 2rem;
+  margin-right: -0.1rem;
+  color: rgb(82, 80, 83);
+}
+
+.info {
+  color: white;
+}
+
+.song {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.album {
+  font-weight: 300;
+  font-size: 0.6rem;
+}
+
+.controls {
+  color: rgb(37, 37, 37);
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.time {
+  background-color: rgb(64, 212, 84, 0.8);
+  min-height: 0.2rem;
+}
