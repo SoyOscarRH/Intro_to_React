@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const reducer = ({ count, step }, { type, data }) => {
+        if (type === "increment") return { count: count + step, step };
+        if (type === "decrement") return { count: count - step, step };
+        if (type === "reset") return { count: 0, step };
+        if (type === "changeStep") return { count, step: data };
+
+        throw new Error("algo salio mal");
+      };
+
+      const Counter = ({}) => {
+        const [state, dispatch] = React.useReducer(reducer, {
+          count: 0,
+          step: 1,
+        });
+        const { count, step } = state;
+
+        return (
+          <div>
+            <h2>The count is {count}</h2>
+            <input
+              type="range"
+              value={step}
+              min={1}
+              max={10}
+              onChange={(e) =>
+                dispatch({ type: "changeStep", data: +e.target.value })
+              }
+            />
+            <button onClick={() => dispatch({ type: "increment" })}>
+              +{step}
+            </button>
+            <button onClick={() => dispatch({ type: "decrement" })}>
+              -{step}
+            </button>
+          </div>
+        );
+      };
+
+      class Counter2 extends React.Component {
+        constructor(props) {
+          super(props);
+
+          this.state = { count: 0, step: 1 };
+          this.changeStep = this.changeStep.bind(this)
+        }
+
+        changeStep(newStep) {
+          this.setState({ ...this.state, step: newStep });
+        }
+
+        increment() {
+          this.setState({
+            ...this.state,
+            count: this.state.count + this.state.step,
+          });
+        }
+
+        decrement() {
+          this.setState({
+            ...this.state,
+            count: this.state.count - this.state.step,
+          });
+        }
+
+        render() {
+          return (
+            <div>
+              <h2>The count is {this.state.count}</h2>
+              <input
+                type="range"
+                value={this.state.step}
+                min={1}
+                max={10}
+                onChange={(e) => this.changeStep(+e.target.value)}
+              />
+              <button onClick={this.increment}>+{this.state.step}</button>
+              <button onClick={this.decrement}>-{this.state.step}</button>
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<Counter2 />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
