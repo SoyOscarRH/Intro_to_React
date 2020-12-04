@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+      const Name = ({setName}) => {
+        console.log("rendering name")
+        return <input onChange={setName}/>
+      }
+
+      const App = () => {
+        const [name, setName] = React.useState("")
+
+        const handleChangeName = 
+          React.useCallback(() => e => setName(e.target.value), [])
+
+        return <Name setName={handleChangeName} /> 
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
