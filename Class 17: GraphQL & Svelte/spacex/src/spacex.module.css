@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  font-family: "Inter";
+}
+
+.card {
+  background-color: #333456;
+  color: #bbbfca;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  transition: box-shadow .4s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card h1 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.card h2 {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.card .photo {
+  max-width: 12vw;
+  border-radius: 0.2rem;
+  margin: 0.2rem;
+}
+
+.card .icon {
+  max-width: 8vw;
+  margin-bottom: 3rem;
+}
