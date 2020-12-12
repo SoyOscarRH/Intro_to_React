@@ -1,5 +1,5 @@
 # Class:
-- [Slides](https://docs.google.com/presentation/d/1luatNzX7hXq_85LQjjZ4o2Vhib4VfztaQCHZe6-ZCx4/edit?usp=sharing)
+- [Slides](https://docs.google.com/presentation/d/1oePIPEF8_SQRKLlVswhc70MryOIdIdNp6udiGmLTEnY/edit?usp=sharing)
 
 # Interesting Links:
 - [Thinking in React Hooks](https://wattenberger.com/blog/react-hooks)
