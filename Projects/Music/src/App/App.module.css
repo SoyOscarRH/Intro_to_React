@@ -1,0 +1,16 @@
+.main {
+  padding: 2.5rem;
+  background: rgb(210, 255, 221);
+  background: linear-gradient(0deg, rgb(119, 156, 185) 0%, rgb(252, 252, 252) 30%);
+  overflow: scroll;
+  max-height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-height: 100vh;
+  min-height: 100vh;
+}

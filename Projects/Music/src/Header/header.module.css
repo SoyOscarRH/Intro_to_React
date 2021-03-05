@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 0;
+  margin-bottom: 4rem;
+  overflow: scroll;
+  min-width: 120vw;
+}
+
+.title {
+  font-weight: 800;
+  font-size: 3.5rem;
+  margin: 0 1rem;
+  user-select: none;
+}
+
+.myLink {
+  text-decoration: none;
+}
+
+.selected {
+  color: rgb(64, 212, 84);
+}
+
+.noSelected {
+  color: rgb(218, 218, 218);
+}

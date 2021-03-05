@@ -1,0 +1,34 @@
+aside {
+  background-color: rgb(26, 26, 26);
+  max-height: 100vh;
+  min-height: 100vh;
+  width: 8vw;
+  padding: 1rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.selected {
+  background-color: rgb(255, 255, 255, 0.12);
+  border-radius: 0.2rem;
+  padding: 0.4rem;
+  align-items: center;
+  display: flex;
+}
+
+aside svg {
+  font-size: 1.8rem;
+}
+
+.unselected svg {
+  filter: invert(60%);
+}
+
+.selected svg {
+  filter: invert(100%);
+}

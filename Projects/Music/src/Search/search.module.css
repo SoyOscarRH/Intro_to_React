@@ -1,0 +1,78 @@
+.track {
+  color: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(90deg, #14274e 0%, #394867 100%);
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  padding-top: 2rem;
+  font-weight: 300;
+  padding-bottom: 3rem;
+  padding-right: 3rem;
+}
+
+.track p {
+  margin: 0;
+}
+
+.track h2 {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+
+.info {
+  margin-bottom: 3rem;
+} 
+
+.area  {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.iconWrapper {
+  padding: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -7rem;
+}
+
+.message {
+  padding-top: 4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.iconWrapper svg {
+  transform: scale(2);
+}
+
+.search {
+  font-size: 1.4rem;
+  background-color: transparent;
+  border: 0.25rem #14274e solid;
+  color: #14274e;
+  border-radius: 0.2rem;
+  padding: 1rem;
+  font-weight: 600;
+  padding-left: 5rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 4rem 0;
+}
+
+.control {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.control svg {
+  transform: scale(4);
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 100%;
+}
